@@ -35,4 +35,10 @@ public class BinaryTreeNode<T> {
         this.right = right;
     }
 
+    public boolean hasLeft() {
+        return this.left != null;
+    }
+    public boolean hasRight() {
+        return this.right != null;
+    }
 }

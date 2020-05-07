@@ -1,6 +1,7 @@
 package tree;
 
 import tree.model.BinaryTreeNode;
+import tree.problems.PathToLeafNodes;
 import tree.problems.HeightOfBinaryTree;
 import tree.problems.InsertElementInBinaryTree;
 import tree.problems.MaximumElementInBinaryTree;
@@ -11,6 +12,7 @@ import tree.traversal.PostOrderTraversal;
 import tree.traversal.PreOrderTraversal;
 import tree.traversal.TreeTraversal;
 
+import static java.lang.System.out;
 import static tree.util.Util.getTree1;
 import static tree.util.Util.print;
 
@@ -49,5 +51,11 @@ public class Main {
         root = getTree1();
         print("Max Sum at level: ", maximumSumAtLevelInBinaryTree.iterative(root));
 
+        PathToLeafNodes<Integer> pathToLeafNodes = new PathToLeafNodes<>();
+        insertElementInBinaryTree.insert(root, 10);
+        out.println("All path leaf nodes: ");
+        pathToLeafNodes.allPathToLeaves(root).forEach(out::println);
+        int sum = 12;
+        print("Has Path with sum = " + sum + ": ", pathToLeafNodes.hasPathSum(root, sum));
     }
 }
