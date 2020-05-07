@@ -1,6 +1,7 @@
 package tree;
 
 import tree.model.BinaryTreeNode;
+import tree.problems.ConvertTreeToMirrorImage;
 import tree.problems.PathToLeafNodes;
 import tree.problems.HeightOfBinaryTree;
 import tree.problems.InsertElementInBinaryTree;
@@ -57,5 +58,12 @@ public class Main {
         pathToLeafNodes.allPathToLeaves(root).forEach(out::println);
         int sum = 12;
         print("Has Path with sum = " + sum + ": ", pathToLeafNodes.hasPathSum(root, sum));
+
+        ConvertTreeToMirrorImage<Integer> convertTreeToMirrorImage = new ConvertTreeToMirrorImage<>();
+        root = getTree1();
+        print("Tree before mirroring: ", levelOrderTraversal.iterative(root));
+        root = convertTreeToMirrorImage.recursive(root);
+        print("Tree after mirroring: ", levelOrderTraversal.iterative(root));
+
     }
 }
