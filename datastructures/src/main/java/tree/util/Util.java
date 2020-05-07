@@ -4,7 +4,7 @@ import tree.model.BinaryTreeNode;
 
 public class Util {
 
-    public static BinaryTreeNode getTree1() {
+    public static BinaryTreeNode<Integer> getTree1() {
         BinaryTreeNode<Integer> root = new BinaryTreeNode<>(1);
         root.setLeft(new BinaryTreeNode<>(2));
         root.setRight(new BinaryTreeNode<>(3));

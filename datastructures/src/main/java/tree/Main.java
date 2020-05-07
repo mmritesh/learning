@@ -2,7 +2,9 @@ package tree;
 
 import tree.model.BinaryTreeNode;
 import tree.problems.HeightOfBinaryTree;
+import tree.problems.InsertElementInBinaryTree;
 import tree.problems.MaximumElementInBinaryTree;
+import tree.problems.MaximumSumAtLevelInBinaryTree;
 import tree.traversal.InorderTraversal;
 import tree.traversal.LevelOrderTraversal;
 import tree.traversal.PostOrderTraversal;
@@ -15,19 +17,20 @@ import static tree.util.Util.print;
 public class Main {
     public static void main(String[] args) {
         BinaryTreeNode<Integer> root = getTree1();
-        TreeTraversal inorderTraversal = new InorderTraversal<>();
+
+        TreeTraversal<Integer> inorderTraversal = new InorderTraversal<>();
         print("Recursive Inorder: ", inorderTraversal.recursive(root));
         print("Iterative Inorder: ", inorderTraversal.iterative(root));
 
-        TreeTraversal preOrderTraversal = new PreOrderTraversal();
+        TreeTraversal<Integer> preOrderTraversal = new PreOrderTraversal();
         print("Recursive PreOrder: ", preOrderTraversal.recursive(root));
         print("Iterative PreOrder: ", preOrderTraversal.iterative(root));
 
-        TreeTraversal postOrderTraversal = new PostOrderTraversal();
+        TreeTraversal<Integer> postOrderTraversal = new PostOrderTraversal();
         print("Recursive PostOrder: ", postOrderTraversal.recursive(root));
         print("Iterative PostOrder: ", postOrderTraversal.iterative(root));
 
-        TreeTraversal levelOrderTraversal = new LevelOrderTraversal();
+        TreeTraversal<Integer> levelOrderTraversal = new LevelOrderTraversal<>();
         print("Iterative LevelOrder: ", levelOrderTraversal.iterative(root));
 
         MaximumElementInBinaryTree<Integer> maximumElementInBinaryTree = new MaximumElementInBinaryTree<>();
@@ -36,5 +39,15 @@ public class Main {
 
         HeightOfBinaryTree<Integer> heightOfBinaryTree = new HeightOfBinaryTree<>();
         print("Recursive Height of Tree: ", heightOfBinaryTree.recursive(root));
+
+        InsertElementInBinaryTree<Integer> insertElementInBinaryTree = new InsertElementInBinaryTree<>();
+        print("Before Insertion: ", levelOrderTraversal.iterative(root));
+        insertElementInBinaryTree.insert(root, 10);
+        print("After Insertion: ", levelOrderTraversal.iterative(root));
+
+        MaximumSumAtLevelInBinaryTree maximumSumAtLevelInBinaryTree = new MaximumSumAtLevelInBinaryTree();
+        root = getTree1();
+        print("Max Sum at level: ", maximumSumAtLevelInBinaryTree.iterative(root));
+
     }
 }
