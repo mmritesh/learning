@@ -2,6 +2,7 @@ package tree;
 
 import tree.model.BinaryTreeNode;
 import tree.problems.ConvertTreeToMirrorImage;
+import tree.problems.FormTreeFromInOrderAndPreOrder;
 import tree.problems.PathToLeafNodes;
 import tree.problems.HeightOfBinaryTree;
 import tree.problems.InsertElementInBinaryTree;
@@ -65,5 +66,9 @@ public class Main {
         root = convertTreeToMirrorImage.recursive(root);
         print("Tree after mirroring: ", levelOrderTraversal.iterative(root));
 
+        FormTreeFromInOrderAndPreOrder<Integer> formTreeFromInOrderAndPreOrder = new FormTreeFromInOrderAndPreOrder<>();
+//        root = formTreeFromInOrderAndPreOrder.recursive(new Integer[]{4,2,5,1,6,3,7}, new Integer[]{1,2,4,5,3,6,7});
+        BinaryTreeNode<Integer> formed = formTreeFromInOrderAndPreOrder.recursive(inorderTraversal.recursive(root), preOrderTraversal.recursive(root));
+        out.println("Tree Formed: " + levelOrderTraversal.iterative(formed) + " | expected: " + levelOrderTraversal.iterative(root));
     }
 }
