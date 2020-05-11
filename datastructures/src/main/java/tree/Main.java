@@ -2,8 +2,8 @@ package tree;
 
 import tree.model.BinarySearchTreeNode;
 import tree.model.BinaryTreeNode;
-import tree.operation.BinarySearchTreeOperation;
-import tree.operation.BinarySearchTreeOperationImpl;
+import tree.bstoperation.BinarySearchTreeOperation;
+import tree.bstoperation.BinarySearchTreeOperationImpl;
 import tree.problems.ConvertTreeToMirrorImage;
 import tree.problems.FormTreeFromInOrderAndPreOrder;
 import tree.problems.PathToLeafNodes;

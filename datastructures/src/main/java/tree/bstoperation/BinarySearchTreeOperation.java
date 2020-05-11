@@ -1,4 +1,4 @@
-package tree.operation;
+package tree.bstoperation;
 
 import tree.model.BinarySearchTreeNode;
 
