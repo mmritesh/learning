@@ -1,5 +1,6 @@
 package tree.util;
 
+import tree.model.AVLTreeNode;
 import tree.model.BinarySearchTreeNode;
 import tree.model.BinaryTreeNode;
 import tree.bstoperation.BinarySearchTreeOperation;
@@ -32,6 +33,11 @@ public class Util {
         operation.insert(root, 18);
         return root;
     }
+
+//    public static AVLTreeNode<Integer> getAVLTree1() {
+//        avlRoot = avlTreeOperation.insert(avlRoot, 4 );
+//
+//    }
     public static void print(String msg, Object obj) {
         System.out.println(msg + obj);
     }

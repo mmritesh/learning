@@ -5,7 +5,7 @@ package tree.model;
  * Number of nodes N(h) = N(h-1) + N(h-2) + 1 = 1.44 * logn
  * @param <T>
  */
-public class AVLTreeNode<T> extends BinaryTreeNode<T> {
+public class AVLTreeNode<T> extends BinarySearchTreeNode<T> {
     private T data;
     private AVLTreeNode<T> left;
     private AVLTreeNode<T> right;
@@ -16,6 +16,9 @@ public class AVLTreeNode<T> extends BinaryTreeNode<T> {
 
     public AVLTreeNode(T data) {
         this.data = data;
+        this.left = null;
+        this.right = null;
+        this.height = 0;
     }
 
     @Override

@@ -1,5 +1,8 @@
 package tree;
 
+import tree.avloperation.AVLTreeOperation;
+import tree.avloperation.AVLTreeOperationImpl;
+import tree.model.AVLTreeNode;
 import tree.model.BinarySearchTreeNode;
 import tree.model.BinaryTreeNode;
 import tree.bstoperation.BinarySearchTreeOperation;
@@ -88,6 +91,15 @@ public class Main {
         operation.delete(bstRoot, 15);
         print("BST after deleting intermediate node (15) (LevelOrder): ", levelOrderTraversal.iterative(bstRoot));
         //--------------------
+
+        AVLTreeNode<Integer> avlRoot = null;
+        AVLTreeOperation<Integer> avlTreeOperation = new AVLTreeOperationImpl<>();
+        avlRoot = avlTreeOperation.insert(avlRoot, 4 );
+        avlRoot = avlTreeOperation.insert(avlRoot, 9 );
+//        avlRoot = avlTreeOperation.insert(avlRoot, 11 );
+        avlRoot = avlTreeOperation.insert(avlRoot, 6 );
+//        avlRoot = avlTreeOperation.insert(avlRoot, 2 );
+        print("AVL Tree (LevelOrder): ", levelOrderTraversal.iterative(avlRoot));
 
     }
 }
