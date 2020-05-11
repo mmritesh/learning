@@ -6,11 +6,9 @@ public class BinarySearchTreeNode<T> extends BinaryTreeNode<T> {
     private BinarySearchTreeNode<T> right;
 
     public BinarySearchTreeNode() {
-        super();
     }
 
     public BinarySearchTreeNode(T data) {
-        super(data);
         this.data = data;
     }
 

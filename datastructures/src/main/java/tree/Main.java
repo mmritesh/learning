@@ -87,7 +87,6 @@ public class Main {
         //deleting a node having both left and right child
         operation.delete(bstRoot, 15);
         print("BST after deleting intermediate node (15) (LevelOrder): ", levelOrderTraversal.iterative(bstRoot));
-
         //--------------------
 
     }

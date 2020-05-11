@@ -1,5 +1,11 @@
 package tree.model;
 
+/**
+ * this assumes root node to be a dummy node,
+ * which has lTag = 1, left = actual root AND rTag = 1, right = points to itself.
+ * @param p
+ * @return
+ */
 public class ThreadedBinaryTreeNode<T> {
     private T data;
     private int lTag;
