@@ -5,6 +5,9 @@ public class BinaryTreeNode<T> {
     private BinaryTreeNode<T> left;
     private BinaryTreeNode<T> right;
 
+    public BinaryTreeNode() {
+    }
+
     public BinaryTreeNode(T data) {
         this.data = data;
         left = null;

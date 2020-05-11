@@ -1,6 +1,9 @@
 package tree.util;
 
+import tree.model.BinarySearchTreeNode;
 import tree.model.BinaryTreeNode;
+import tree.operation.BinarySearchTreeOperation;
+import tree.operation.BinarySearchTreeOperationImpl;
 
 public class Util {
 
@@ -15,6 +18,20 @@ public class Util {
         return root;
     }
 
+    public static BinarySearchTreeNode<Integer> getBinarySearchTree1() {
+        BinarySearchTreeNode<Integer> root = new BinarySearchTreeNode<>(10);
+
+        BinarySearchTreeOperation<Integer> operation = new BinarySearchTreeOperationImpl<>();
+        operation.insert(root, 5);
+        operation.insert(root, 15);
+        operation.insert(root, 6);
+        operation.insert(root, 12);
+        operation.insert(root, 14);
+        operation.insert(root, 13);
+        operation.insert(root, 4);
+        operation.insert(root, 18);
+        return root;
+    }
     public static void print(String msg, Object obj) {
         System.out.println(msg + obj);
     }

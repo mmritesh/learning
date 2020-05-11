@@ -1,6 +1,9 @@
 package tree;
 
+import tree.model.BinarySearchTreeNode;
 import tree.model.BinaryTreeNode;
+import tree.operation.BinarySearchTreeOperation;
+import tree.operation.BinarySearchTreeOperationImpl;
 import tree.problems.ConvertTreeToMirrorImage;
 import tree.problems.FormTreeFromInOrderAndPreOrder;
 import tree.problems.PathToLeafNodes;
@@ -15,6 +18,7 @@ import tree.traversal.PreOrderTraversal;
 import tree.traversal.TreeTraversal;
 
 import static java.lang.System.out;
+import static tree.util.Util.getBinarySearchTree1;
 import static tree.util.Util.getTree1;
 import static tree.util.Util.print;
 
@@ -67,8 +71,24 @@ public class Main {
         print("Tree after mirroring: ", levelOrderTraversal.iterative(root));
 
         FormTreeFromInOrderAndPreOrder<Integer> formTreeFromInOrderAndPreOrder = new FormTreeFromInOrderAndPreOrder<>();
-//        root = formTreeFromInOrderAndPreOrder.recursive(new Integer[]{4,2,5,1,6,3,7}, new Integer[]{1,2,4,5,3,6,7});
         BinaryTreeNode<Integer> formed = formTreeFromInOrderAndPreOrder.recursive(inorderTraversal.recursive(root), preOrderTraversal.recursive(root));
         out.println("Tree Formed: " + levelOrderTraversal.iterative(formed) + " | expected: " + levelOrderTraversal.iterative(root));
+
+        //--------------------
+        BinarySearchTreeNode<Integer> bstRoot = getBinarySearchTree1();
+        BinarySearchTreeOperation<Integer> operation = new BinarySearchTreeOperationImpl<>();
+        print("Binary Search Tree (LevelOrder): ", levelOrderTraversal.iterative(bstRoot));
+        print("Binary Search Tree (InOrder): ", inorderTraversal.iterative(bstRoot));
+        //deleting a leaf node
+        bstRoot = operation.delete(bstRoot, 18);
+        print("BST after deleting leaf node (18) (LevelOrder): ", levelOrderTraversal.iterative(bstRoot));
+        bstRoot = operation.insert(bstRoot, 18);
+
+        //deleting a node having both left and right child
+        operation.delete(bstRoot, 15);
+        print("BST after deleting intermediate node (15) (LevelOrder): ", levelOrderTraversal.iterative(bstRoot));
+
+        //--------------------
+
     }
 }
