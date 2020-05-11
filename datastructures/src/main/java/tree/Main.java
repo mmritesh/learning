@@ -7,13 +7,13 @@ import tree.model.BinarySearchTreeNode;
 import tree.model.BinaryTreeNode;
 import tree.bstoperation.BinarySearchTreeOperation;
 import tree.bstoperation.BinarySearchTreeOperationImpl;
-import tree.problems.ConvertTreeToMirrorImage;
-import tree.problems.FormTreeFromInOrderAndPreOrder;
-import tree.problems.PathToLeafNodes;
-import tree.problems.HeightOfBinaryTree;
-import tree.problems.InsertElementInBinaryTree;
-import tree.problems.MaximumElementInBinaryTree;
-import tree.problems.MaximumSumAtLevelInBinaryTree;
+import tree.btoperation.ConvertTreeToMirrorImage;
+import tree.btoperation.FormTreeFromInOrderAndPreOrder;
+import tree.btoperation.PathToLeafNodes;
+import tree.btoperation.HeightOfBinaryTree;
+import tree.btoperation.InsertElementInBinaryTree;
+import tree.btoperation.MaximumElementInBinaryTree;
+import tree.btoperation.MaximumSumAtLevelInBinaryTree;
 import tree.traversal.InorderTraversal;
 import tree.traversal.LevelOrderTraversal;
 import tree.traversal.PostOrderTraversal;
@@ -90,16 +90,18 @@ public class Main {
         //deleting a node having both left and right child
         operation.delete(bstRoot, 15);
         print("BST after deleting intermediate node (15) (LevelOrder): ", levelOrderTraversal.iterative(bstRoot));
+
         //--------------------
 
         AVLTreeNode<Integer> avlRoot = null;
         AVLTreeOperation<Integer> avlTreeOperation = new AVLTreeOperationImpl<>();
         avlRoot = avlTreeOperation.insert(avlRoot, 4 );
         avlRoot = avlTreeOperation.insert(avlRoot, 9 );
-//        avlRoot = avlTreeOperation.insert(avlRoot, 11 );
         avlRoot = avlTreeOperation.insert(avlRoot, 6 );
-//        avlRoot = avlTreeOperation.insert(avlRoot, 2 );
+        avlRoot = avlTreeOperation.insert(avlRoot, 2 );
+        avlRoot = avlTreeOperation.insert(avlRoot, 3 );
         print("AVL Tree (LevelOrder): ", levelOrderTraversal.iterative(avlRoot));
 
+        //-------------------
     }
 }
