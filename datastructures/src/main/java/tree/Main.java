@@ -2,6 +2,7 @@ package tree;
 
 import tree.avloperation.AVLTreeOperation;
 import tree.avloperation.AVLTreeOperationImpl;
+import tree.btoperation.RemoveHalfNode;
 import tree.model.AVLTreeNode;
 import tree.model.BinarySearchTreeNode;
 import tree.model.BinaryTreeNode;
@@ -103,5 +104,13 @@ public class Main {
         print("AVL Tree (LevelOrder): ", levelOrderTraversal.iterative(avlRoot));
 
         //-------------------
+
+        root = new BinaryTreeNode<>(1);
+        root.setLeft(new BinaryTreeNode<>(2));
+        root.getLeft().setLeft(new BinaryTreeNode<>(3));
+        print("Before removing half nodes: ", levelOrderTraversal.iterative(root));
+        RemoveHalfNode<Integer> removeHalfNode = new RemoveHalfNode<>();
+        root = removeHalfNode.remove(root);
+        print("Before removing half nodes: ", levelOrderTraversal.iterative(root));
     }
 }
