@@ -13,6 +13,8 @@ public class Main {
         minHeap.add(7);
         minHeap.add(6);
 
+//        minHeap.remove(0);
+        minHeap.remove(1);
         System.out.println("Min Heap: " + minHeap.getItems());
     }
 }

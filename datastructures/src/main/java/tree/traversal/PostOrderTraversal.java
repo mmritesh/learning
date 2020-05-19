@@ -10,12 +10,12 @@ import java.util.Stack;
  * Algorithm:
  * 1. create an empty stack.
  * 2. while root != null
- *       push right child and then root to the stack.
+ *       add right child and then root to the stack.
  *       root = root.left
- * 3. root = pop()
+ * 3. root = remove()
  * 4. if root's right child matches with top of stack
- *       pop the item from top of stack
- *       push root to stack
+ *       remove the item from top of stack
+ *       add root to stack
  *       set root to root's right child.
  * 5. else
  *       print data in root.

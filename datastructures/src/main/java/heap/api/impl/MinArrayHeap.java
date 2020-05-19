@@ -21,12 +21,13 @@ public class MinArrayHeap<T extends Comparable<T>> extends AbstractArrayHeap<T> 
     }
 
     @Override
-    public T pop(int index) {
-        if(size == 0) throw new IllegalStateException();
-        T temp = items[0];
-        items[0] = items[size - 1];
+    public T remove(int index) {
+        if (size == 0) throw new IllegalStateException();
+        if(index >= size || index < 0) throw new IllegalArgumentException();
+        T temp = items[index];
+        items[index] = items[size - 1];
         size--;
-        heapifyDown();
+        heapifyDown(index);
         return temp;
     }
 
@@ -68,8 +69,8 @@ public class MinArrayHeap<T extends Comparable<T>> extends AbstractArrayHeap<T> 
         }
     }
 
-    private void heapifyDown() {
-        int index = 0;
+    private void heapifyDown(int index) {
+//        int index = 0;
         while (hasLeftChild(index)) {
             int smallerChildIndex = getLeftChildIndex(index);
             if (hasRightChild(index) && rightChild(index).compareTo(leftChild(index)) < 0) {

@@ -7,7 +7,7 @@ public interface Heap<T> {
         MIN_HEAP, MAX_HEAP;
     }
     T peek(int index);
-    T pop(int index);
+    T remove(int index);
     void add(T item);
     void print();
     List<T> getItems();
