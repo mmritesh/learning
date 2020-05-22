@@ -1,5 +1,8 @@
 package main.java.multipleinheritance.usinginterfaces;
 
+import main.java.multipleinheritance.usinginterfaces.Parent1;
+import main.java.multipleinheritance.usinginterfaces.Parent2;
+
 public class ConcreteChild implements Parent1, Parent2 {
     @Override
     public void show() {

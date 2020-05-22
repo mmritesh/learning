@@ -70,7 +70,6 @@ public class MinArrayHeap<T extends Comparable<T>> extends AbstractArrayHeap<T> 
     }
 
     private void heapifyDown(int index) {
-//        int index = 0;
         while (hasLeftChild(index)) {
             int smallerChildIndex = getLeftChildIndex(index);
             if (hasRightChild(index) && rightChild(index).compareTo(leftChild(index)) < 0) {
