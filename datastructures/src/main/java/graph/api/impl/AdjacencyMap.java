@@ -1,4 +1,6 @@
-package graph;
+package graph.api.impl;
+
+import graph.api.Graph;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -6,14 +8,13 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Set;
 
-public class Graph {
+public class AdjacencyMap implements Graph {
 
     public Map<Integer, Node> graph = new HashMap<Integer, Node>();
 
     public static class Node {
         int id;
         LinkedList<Node> adjacencyList = new LinkedList<Node>();
-
         Node(int id) {
             this.id = id;
         }
@@ -23,10 +24,21 @@ public class Graph {
         return graph.get(id);
     }
 
+    @Override
     public void addEdge(int src, int dest) {
         Node s = getNode(src);
         Node d = getNode(dest);
         s.adjacencyList.add(d);
+    }
+
+    @Override
+    public void removeEdge(int source, int dest) {
+
+    }
+
+    @Override
+    public boolean hasEdge(int source, int dest) {
+        return false;
     }
 
     public boolean hasPathDfs(int src, int dest) {

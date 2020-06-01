@@ -1,4 +1,6 @@
-package graph.api;
+package graph.api.impl;
+
+import graph.api.Graph;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

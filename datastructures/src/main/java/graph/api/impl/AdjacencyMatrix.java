@@ -1,4 +1,6 @@
-package graph.api;
+package graph.api.impl;
+
+import graph.api.Graph;
 
 public class AdjacencyMatrix implements Graph {
 
