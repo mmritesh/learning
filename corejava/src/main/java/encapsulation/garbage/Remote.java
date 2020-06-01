@@ -1,7 +1,7 @@
 //package encapsulation;
 //
-//import encapsulation.model.Buttons;
-//import encapsulation.model.Circuit;
+//import encapsulation.api.Buttons;
+//import encapsulation.api.Circuit;
 //import encapsulation.service.SingnalSender;
 //
 //import java.util.List;
