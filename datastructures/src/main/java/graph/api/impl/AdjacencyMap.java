@@ -1,14 +1,12 @@
 package graph.api.impl;
 
-import graph.api.Graph;
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Set;
 
-public class AdjacencyMap implements Graph {
+public class AdjacencyMap extends AbstractGraph {
 
     public Map<Integer, Node> graph = new HashMap<Integer, Node>();
 

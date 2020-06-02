@@ -1,12 +1,11 @@
 package graph.api.impl;
 
-import graph.api.Graph;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
-public class AdjacencyList implements Graph {
+public class AdjacencyList extends AbstractGraph {
     private List<Integer> vertices;
     private List<LinkedList<Integer>> edges;
     private int numberOfVertices;
@@ -41,7 +40,7 @@ public class AdjacencyList implements Graph {
 
     @Override
     public boolean hasEdge(int source, int dest) {
-        return edges.get(source).indexOf(dest) != -1;
+        return edges.get(source).indexOf(dest) > -1;
     }
 
     private boolean areVerticesValid(int source, int dest) {
