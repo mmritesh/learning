@@ -8,5 +8,7 @@ public interface Graph {
     boolean hasEdge(int source, int dest);
     List<Integer> dfs(int start);
     List<Integer> dfsRecursive(int start);
+    List<Integer> dfs(int start, int end);
+    List<Integer> dfsRecursive(int start, int end);
     void displayGraph();
 }

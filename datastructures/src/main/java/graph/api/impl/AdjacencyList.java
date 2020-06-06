@@ -3,7 +3,6 @@ package graph.api.impl;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Stack;
 
 public class AdjacencyList extends AbstractGraph {
     private List<Integer> vertices;
