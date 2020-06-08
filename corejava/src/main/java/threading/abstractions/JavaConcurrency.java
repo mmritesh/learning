@@ -1,4 +1,4 @@
-package threading.syncronization;
+package threading.abstractions;
 
 import java.util.Collections;
 import java.util.Hashtable;
