@@ -1,6 +1,8 @@
 package threading.abstractions;
 
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadFactory;
@@ -45,6 +47,15 @@ public class ThreadPoolExecutorExample implements Runnable {
         for (int i = 0; i < 100; i++) {
             executor.execute(new ThreadPoolExecutorExample(i));
         }
+        // The ExecutorService will not shut down immediately, but it will no longer accept new tasks, and once all
+        // threads have finished current tasks,
         executor.shutdown();
+
+        ExecutorService executorService = new ThreadPoolExecutor(5, 10, 1, TimeUnit.SECONDS, queue);
+        executorService = Executors.newFixedThreadPool(10);
+        executorService = Executors.newSingleThreadExecutor();
+        executorService = Executors.newScheduledThreadPool(10);
+        executorService = Executors.newCachedThreadPool();
+
     }
 }
