@@ -1,4 +1,4 @@
-package threading.syncronization;
+package threading.abstractions;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -14,6 +14,16 @@ import java.util.concurrent.TimeUnit;
 import static java.lang.System.currentTimeMillis;
 
 public class MapComparison implements Runnable {
+        /**
+         * 1. Concurrent HashMap:
+         *  If the level of concurrency required is not specified then it is takes 16 as the default value.
+         *  So internally the ConcurrentHashMap will be divided into 16 segments. Each Segment behaves independently.
+         *  Creates a new, empty map with a default initial capacity (16), load factor (0.75) and concurrencyLevel (16).
+         *  the lock is only on one of the segments.
+         *
+         *  2. Synchronized HashMap:
+         *  In synchronizedMap every write operation acquires lock on entire SynchronizedMap
+         */
         private static Map<Integer, String> map;
         private Random random = new Random(currentTimeMillis());
         public static void main(String[] args) throws InterruptedException {
@@ -31,7 +41,8 @@ public class MapComparison implements Runnable {
                         executorService.execute(new MapComparison());
                 }
                 executorService.shutdown();
-                executorService.awaitTermination(1, TimeUnit.MINUTES); System.out.println(map.getClass().getSimpleName() + " took " + (System.currentTimeMillis() - startMillis) + " ms");
+                executorService.awaitTermination(1, TimeUnit.MINUTES);
+                System.out.println(map.getClass().getSimpleName() + " took " + (System.currentTimeMillis() - startMillis) + " ms");
         }
         private static void fillMap(Map<Integer, String> map) {
                 for (int i = 0; i < 100; i++) {

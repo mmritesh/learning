@@ -3,6 +3,12 @@ package threading.syncronization;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
+/**
+ * If wait() and notify() were on the Thread instead then each thread would have to know the status of every other thread.
+ * How would thread1 know that thread2 was waiting for access to a particular resource? If thread1 needed to call
+ * thread2.notify() it would have to somehow find out that thread2 was waiting. There would need to be some mechanism
+ * for threads to register the resources or actions that they need so others could signal them when stuff was ready or available.
+ */
 public class ConsumerProducer {
     private static final Queue<Integer> queue = new ConcurrentLinkedQueue();
     private static final long startMillis = System.currentTimeMillis();
@@ -19,6 +25,8 @@ public class ConsumerProducer {
             consumerThreads[i].join();
             producerThread.join();
         }
+
+
     }
 
     public static class Consumer implements Runnable {
@@ -58,4 +66,5 @@ public class ConsumerProducer {
             }
         }
     }
+
 }
