@@ -31,9 +31,10 @@ public class ConsumerProducer {
 
     public static class Consumer implements Runnable {
         public void run() {
-            while (System.currentTimeMillis() < (startMillis + 10000)) {
+            while (System.currentTimeMillis() < (startMillis + 1000000)) {
                 synchronized (queue) {
                     try {
+                        System.out.println("[" + Thread.currentThread().getName() + "]: Waiting for lock.");
                         queue.wait();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
@@ -41,7 +42,9 @@ public class ConsumerProducer {
                 }
                 if (!queue.isEmpty()) {
                     Integer integer = queue.poll();
-                    System.out.println("[" + Thread.currentThread().getName() + "]: " + integer);
+                    System.out.println("[" + Thread.currentThread().getName() + "]: Got the access, Number is: " + integer);
+                } else {
+                    System.out.println("[" + Thread.currentThread().getName() + "]: Got the access, Queue is empty.");
                 }
             }
         }
@@ -50,13 +53,15 @@ public class ConsumerProducer {
     public static class Producer implements Runnable {
         public void run() {
             int i = 0;
-            while (System.currentTimeMillis() < (startMillis + 10000)) {
+            while (System.currentTimeMillis() < (startMillis + 1000000)) {
+                System.out.println("[" + Thread.currentThread().getName() + "]: Producing number: " + i);
                 queue.add(i++);
                 synchronized (queue) {
+                    System.out.println("[" + Thread.currentThread().getName() + "]: Notifying waiting thread.");
                     queue.notify();
                 }
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

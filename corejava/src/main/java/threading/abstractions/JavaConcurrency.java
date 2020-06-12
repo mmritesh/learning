@@ -27,7 +27,7 @@ public class JavaConcurrency {
          */
         ExecutorService executorService = Executors.newFixedThreadPool(10);
         Executor executor = (test) -> new Thread(test).start();
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(5, 5, 10, TimeUnit.MILLISECONDS, null);
+        ExecutorService threadPoolExecutor = new ThreadPoolExecutor(5, 5, 10, TimeUnit.MILLISECONDS, null);
 
         /**
          * #2 Concurrent Collections
@@ -53,13 +53,18 @@ public class JavaConcurrency {
          * In contrast to simple synchronized blocks a semaphore has an internal counter that is increased each time
          * a thread acquires a lock and decreased each time a thread releases a lock it obtained before.
          * The increasing and decreasing operations are of course synchronized,
+         *
          * hence a semaphore can be used to control how many threads pass simultaneously through a critical section.
          */
 
-        //The fairness parameter decides if new threads, which try to acquire a lock, are set at the beginning or at the end of the list of waiting threads
+        //The fairness parameter decides if new threads, which try to acquire a lock, are set at the beginning or
+        // at the end of the list of waiting threads
         Semaphore semaphore = new Semaphore(3, true);
 //        semaphore.acquire();
 //        semaphore.release();
 
+        /**
+         * #5. CountDownLatch
+         */
     }
 }
