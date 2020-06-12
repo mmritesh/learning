@@ -10,5 +10,6 @@ public interface Graph {
     List<Integer> dfsRecursive(int start);
     List<Integer> dfs(int start, int end);
     List<Integer> dfsRecursive(int start, int end);
+    List<Integer> bfs(int start);
     void displayGraph();
 }

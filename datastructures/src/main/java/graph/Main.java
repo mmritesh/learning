@@ -8,17 +8,21 @@ import graph.api.impl.AdjacencyMatrix;
 public class Main {
 
     public static void main(String[] args) {
+        int startIndex = 0;
         System.out.println("*** Adjacency Matrix ***");
         Graph graph = new AdjacencyMatrix(8);
         graph = addEdges(graph);
         graph.displayGraph();
-        System.out.println("DFS Iterative: " + graph.dfs(0));
-        System.out.println("DFS Recursive: " + graph.dfsRecursive(0));
+        System.out.println("DFS Iterative: " + graph.dfs(startIndex));
+        System.out.println("DFS Recursive: " + graph.dfsRecursive(startIndex));
 
-        System.out.println("*** Adjacency Map ***");
+        System.out.println("\n\n*** Adjacency Map ***");
         Graph graphMap = new AdjacencyMapPractice();
         graphMap = addEdges(graphMap);
-        System.out.println("DFS Recursive: " + graphMap.dfsRecursive(0, 5));
+        System.out.println("DFS Recursive: " + graphMap.dfsRecursive(startIndex));
+        System.out.println("DFS Iterative: " + graphMap.dfs(startIndex));
+        System.out.println("BFS Iterative: " + graphMap.bfs(startIndex));
+
 
     }
 

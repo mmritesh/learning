@@ -35,4 +35,10 @@ public abstract class AbstractGraph implements Graph {
     public void displayGraph() {
         System.out.println("Cannot display graph.");
     }
+
+    @Override
+    public List<Integer> bfs(int start) {
+        System.out.println("bfs: is not yet supported.");
+        return null;
+    }
 }
