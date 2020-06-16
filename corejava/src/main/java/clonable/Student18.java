@@ -19,6 +19,7 @@ class Student18 implements Cloneable {
             System.out.println(s2.rollno + " " + s2.name + " " + s2);
 
         } catch (CloneNotSupportedException c) {
+            c.printStackTrace();
         }
 
     }
