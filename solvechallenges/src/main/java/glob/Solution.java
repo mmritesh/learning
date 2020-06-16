@@ -1,4 +1,4 @@
-package globant;
+package glob;
 
 import java.io.BufferedReader;
 import java.io.IOException;
