@@ -23,7 +23,7 @@ public abstract class AbstractFeatureImpl implements FeatureService {
 
     protected static final Logger LOGGER = new LoggerImpl();
 
-    protected SubscriptionPackDao subscriptionPackDao;
+    public SubscriptionPackDao subscriptionPackDao;
     protected UserDao userDao;
     protected Scanner scanner;
     protected ServicePackDao servicePackDao;
