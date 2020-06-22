@@ -1,5 +1,8 @@
 package clonable;
 
+import java.util.HashMap;
+import java.util.Map;
+
 class Student18 implements Cloneable {
     int rollno;
     String name;
@@ -7,6 +10,8 @@ class Student18 implements Cloneable {
     Student18(int rollno, String name) {
         this.rollno = rollno;
         this.name = name;
+        Map<Integer, Boolean> map = new HashMap<>();
+        map.put(1, !false);
     }
 
     public static void main(String[] args) {

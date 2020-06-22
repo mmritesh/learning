@@ -43,7 +43,7 @@ public class SubscribeToBasePackFeatureImpl extends AbstractFeatureImpl {
         LOGGER.info(String.format("Number of Months: %s", months));
 
         int subscriptionAmount = subscriptionPack.getPrice() * months;
-        LOGGER.info(String.format("Subscription amount: %s Rs.", subscriptionAmount));
+        LOGGER.info(String.format("Subscription discount: %s Rs.", subscriptionAmount));
 
         int discount = this.promoService.getDiscount(Constants.LOGGED_IN_USER_ID);
         LOGGER.info(String.format("Discount applied: %s Rs.", discount));
