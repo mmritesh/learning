@@ -57,4 +57,10 @@ public class BillServiceTest {
         Bill bill = discountService.calculateDiscount(20000, Customer.Type.PREMIUM);
         Assert.assertEquals(15800, bill.getFinalAmount(), 0.0f);
     }
+
+    @Test
+    public void test8() {
+        Bill bill = discountService.calculateDiscount(20000, Customer.Type.NEW);
+        Assert.assertEquals(15800, bill.getFinalAmount(), 0.0f);
+    }
 }

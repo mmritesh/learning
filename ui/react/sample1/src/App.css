@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  padding: 50px;
 }
 
 .App-logo {
@@ -35,4 +36,23 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+table, td, tr {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+td, tr {
+  height: 50px;
+  width: 50px;
+}
+
+.TableForm {
+  max-width: 100px;
+}
+
+.Home {
+  text-align: left;
 }

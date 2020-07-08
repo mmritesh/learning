@@ -1,5 +1,8 @@
 package threading.syncronization;
 
+import java.util.Arrays;
+import java.util.PriorityQueue;
+
 public class NotSynchronizedCounter implements Runnable {
     private static int counter = 0;
 
