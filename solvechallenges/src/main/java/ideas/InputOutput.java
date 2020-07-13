@@ -26,13 +26,6 @@ class Main {
         int numLines = 0;
         try {
             Scanner in = new Scanner(new BufferedReader(new FileReader("/Users/ritesh/Documents/personal/solvechallenges/src/main/java/ideas/input.txt")));
-
-            /* Here we can read in the input file */
-            /* In this example, we're reading all the lines of file
-               `input.txt` and then ignoring them. 
-               You should modify this part of the
-               program to read and process the input as desired */
-
             PrintWriter output = new PrintWriter(new BufferedWriter(new FileWriter("/Users/ritesh/Documents/personal/solvechallenges/src/main/java/ideas/output.txt")));;
             Map<String, String> apiMap = new LinkedHashMap<>(), tmp;
             Map<String, Map<String, String>> appMap = new LinkedHashMap<>();
