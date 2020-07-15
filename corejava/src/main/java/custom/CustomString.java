@@ -1,8 +1,6 @@
-package cdk;
+package custom;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
-
-public class Solve {
+public class CustomString {
 
     public static void main(String[] args) {
         System.out.println(indexOf("0123", "23"));

@@ -9,7 +9,7 @@ import java.util.List;
 @Builder
 public class Customer {
     public enum Type {
-        REGULAR, PREMIUM, NEW
+        REGULAR, PREMIUM, NEW, GOLD
     }
 
     private Type customerType;

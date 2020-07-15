@@ -1,4 +1,4 @@
-package cdk;
+package custom;
 
 public interface CustomSet<T> {
     void add(T item);

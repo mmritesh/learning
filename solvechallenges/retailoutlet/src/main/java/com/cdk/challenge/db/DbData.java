@@ -38,9 +38,17 @@ public class DbData {
             ))
             .build();
 
+    private static Customer GOLD_CUSTOMER = Customer.builder()
+            .customerType(Customer.Type.GOLD)
+            .purchaseSlabs(Arrays.asList(
+                    new PurchaseSlab(0, -1, 50)
+            ))
+            .build();
+
     public static Map<Customer.Type, Customer> CUSTOMER_MAP = new HashMap<Customer.Type, Customer>() {{
         put(Customer.Type.REGULAR, REGULAR_CUSTOMER);
         put(Customer.Type.PREMIUM, PREMIUM_CUSTOMER);
         put(Customer.Type.NEW, NEW_CUSTOMER);
+        put(Customer.Type.GOLD, GOLD_CUSTOMER);
     }};
 }

@@ -8,6 +8,9 @@ public class App {
     public static void main(String[] args) {
 //        Set<String> words = getWords("i am very very happy");
 //        System.out.println(words);
+
+        String src = "I am a good boy", dest = "am a";
+        System.out.println(src.indexOf(dest));
     }
 
     public Set<String> getWords(String input) {
@@ -27,4 +30,5 @@ public class App {
         words.add(word.toString());
         return words;
     }
+
 }
