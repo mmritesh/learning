@@ -18,7 +18,7 @@ import java.util.Scanner;
 
 // Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail
 
-class TestClass {
+class FindTriplets {
     /**
      * 1
      *  4
