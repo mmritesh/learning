@@ -64,6 +64,9 @@ class Main {
                You should modify this part of the
                program to write the desired output */
 
+            Map<String, List<String>> map = new HashMap<>();
+            new ArrayList<>(map.values());
+
         } catch (IOException e) {
             System.out.println("IO error in input.txt or output.txt");
         }
